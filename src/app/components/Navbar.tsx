@@ -1,8 +1,7 @@
 
 'use client'
 
-import youtube from '../../../public/you.jpg'
-import insta from '../../../public/insta.jpeg'
+
 import Image from "next/image"
 import star from '../../../public/start.jpeg'
 import { useRouter } from 'next/navigation';
@@ -22,22 +21,20 @@ import { CgProfile } from "react-icons/cg";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
-
+import { FaRegAddressCard } from "react-icons/fa6";
 import Link from 'next/link'
 import {  useEffect, useRef } from 'react';
 import { Transition } from '@headlessui/react';
+import { RiMoneyRupeeCircleFill } from "react-icons/ri";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
-
-
-
+import { IoStorefrontOutline } from "react-icons/io5";
+import { IoMdContact } from "react-icons/io";
 export  default function Navbar () {
 const router = useRouter()
   const [isOpen, setIsOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
-  const [profileClick , setProfileClick] = useState(false)
-  const [earningClick , setEarningClick] = useState(false)
-  const [storeClick , setStoreClick] = useState(false)
-  const [addessClick , setAdderessClick] = useState(false)
+
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -157,17 +154,26 @@ const router = useRouter()
       ><div className='flex  justify-self-end w-[6rem]'>
         <div
           ref={drawerRef}
-          className=" h-[30rem]  justify-center fixed flex p-6 flex-col gap-4 rounded-lg  bg-zinc-950 backdrop-filter backdrop-blur-lg bg-opacity-30 shadow-lg text-white  z-50"
+          className=" h-[50rem]  justify-center pt-5 pb-5 fixed flex p-6 flex-col gap-8 rounded-lg  bg-zinc-200 backdrop-filter backdrop-blur-3xl bg-opacity-5 shadow-lg text-white  z-50"
         >
         
            
-                 <div><Image alt = 'img' src = {star} height={100}  className="rounded-full border aspect-square   text-center border-black "/></div>  
-                 <p className='font-serif text-xl text-green-900'> @UserName </p>
-                   <div onClick={ () => {router.push('/Profile')}} className={` ${profileClick ? `bg-green-900`: `bg-green-900`}  flex gap-2 w-44  text-center bg-green-600  - font-semibold text-white p-2 pl-14 border border-black-500 hover:border-transparent rounded`} > profile</div>
-                   <div onClick={ () => {router.push('/Store')}} className={` ${storeClick ? `bg-green-900`: `bg-green-900`}  flex gap-2 w-44  text-center bg-green-600   font-semibold text-white p-2 pl-14 border border-black-500 hover:border-transparent rounded`}> my store</div>
-                   <div onClick={ () => {router.push('/Earning')}} className={` ${earningClick ? `bg-green-900`: `bg-green-900`}  flex gap-2 w-44  text-center bg-green-600  font-semibold text-white p-2 pl-14 border border-black-500 hover:border-transparent rounded`}>  earning</div>
-                   <div onClick={ () => {router.push('/Address')}} className={` ${addessClick ? `bg-green-900`:`bg-green-900`}  flex gap-2 w-44  text-center bg-green-600   font-semibold text-white p-2 pl-14 border border-black-500 hover:border-transparent rounded`}>  addess</div>
-                   <div onClick={ () => {router.push('/Log-in')}} className=" flex gap-2 w-44  text-center bg-blue-600  text-white font-semibold hover:text-white p-2 pl-14 border border-black-500 hover:border-transparent rounded"> log-In</div>
+                 <div className='flex  flex-col gap-1 items-start'>
+                  <div ><Image alt = 'img' src = {star} height={100}  className="rounded-full border aspect-square   text-center border-black "/></div>
+                 <p className='text-black font-sans text-2xl'>testing username</p>  
+                 <p className='font-sans text-xl text-black'> @UserName </p>
+                 </div>
+                   <div onClick={ () => {router.push('/Profile')}} className={`text-black text-2xl flex items-center gap-3 cursor-pointer`} > <CgProfile />  Profile</div>
+                   <div onClick={ () => {router.push('/Store')}} className={'text-black text-2xl flex items-center gap-3 cursor-pointer'}> <IoStorefrontOutline /> Mystore</div>
+                   <div onClick={ () => {router.push('/Earning')}}  className={'text-black text-2xl flex items-center gap-3 cursor-pointer'}> <RiMoneyRupeeCircleFill /> Earning</div>
+                   <div onClick={ () => {router.push('/Address')}}  className={'text-black text-2xl flex items-center gap-3 cursor-pointer'}> <FaRegAddressCard />
+                   Address</div>
+
+                   <div onClick={ () => {router.push('/')}} className={'text-black text-2xl flex items-center gap-3 cursor-pointer'}> 
+                   <IoIosInformationCircleOutline /> About us</div>
+                   <div onClick={ () => {router.push('/')}} className={'text-black text-2xl flex items-center gap-3 cursor-pointer'}> 
+                   <IoMdContact /> Contact us</div>
+                   <div onClick={ () => {router.push('/Log-in')}} className=" flex gap-2 w-24  bg-green-950 text-xl font-sans  text-white font-semibold text-center hover:text-white p-2 items-center justify-center border border-black-500 hover:border-transparent rounded-2xl"> logIn</div>
                    
                    </div>      
             

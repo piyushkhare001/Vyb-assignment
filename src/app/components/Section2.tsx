@@ -6,76 +6,63 @@ import Image from "next/image"
 import delhi from  '../../../public/delhi.jpeg'
 import mumbai from '../../../public/mumbai.jpeg'
 
-import { useState } from 'react';
 
-const slides = [
-  {
-    id: 1,
-    image: delhi,
-    city : "Delhi"
-  
-  },
-  {
-    id: 2,
-    image:mumbai,
-    city : "Mumbai"
-  }
-];
+
+
+
 export default  function Section2 (){
-    const [currentSlide, setCurrentSlide] = useState(0);
+    
 
-    const nextSlide = () => {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    };
-  
-    const prevSlide = () => {
-      setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-    };
-  
+    
     return (
-      <div className="relative sm:mr-3 sm:ml-1 w-full flex items-center mx-auto z-20 max-w-6xl bg-blue-50 rounded-lg overflow-hidden border border-dark-800">
-        <div className="flex transition-transform duration-500 " style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-          {slides.map((slide) => (
-            <div key={slide.id} className="w-full flex-shrink-0 lg:m-10   ">
-          <div className="flex sm:flex-col  justify-between sm:p-4  sm:gap-3 w-4/5 m-4">
-        <div className="text-3xl sm:text-xl sm:pl-2 font-extrabold font-serif"> Product </div>
+      <div className="relative  sm:h-[20rem] w-full lg:h-[34rem] flex items-center p-10  z-20  bg-green-50 rounded-lg overflow-hidden border border-dark-800">
+        <div className="flex transition-transform duration-500 " >
+          
+            <div  className="w-full flex-shrink-0 lg:m-10   ">
+          <div className="flex   justify-between lg:p-4 lg:pr-14 sm:gap-20 lg:pb-24">
+        <div className="text-3xl sm:text-base font-extrabold font-mono"> Product </div>
         
-        <div className="flex items-center   justify-between lg:gap-6">
-        <button className="bg-transparent flex gap-2 hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black-500 hover:border-transparent rounded">
+        <div className="flex items-center sm:gap-2  justify-between lg:gap-6">
+        <button className="bg-transparent sm:h-18 sm:w-16 sm:text-xs font-serif text-center flex gap-2 hover:bg-black text-black font-semibold hover:text-white lg:py-2 lg:px-4 border border-black-500 hover:border-transparent rounded">
  {` Itinerary >`}
 </button>
-<button className="bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded">
+<button className="bg-green-900 text-white font-serif lg:py-2 sm:h-10 sm:w-16 sm:text-xs  lg:px-4 border border-green-700 rounded">
 Demo Store
 </button>
         </div>
           </div>
-         <main className=" flex sm:pl-8 justify-around sm:items-center sm:flex-col-reverse   sm:gap-3 w-4/5 m-4">
-             <div  className=" flex flex-col justify-between h-38 w-3/5"> 
+         <main className=" flex lg:pl-8 lg:justify-between    relative  lg:w-4/5 lg:m-4">
+             <div  className=" flex flex-col justify-around sm:mt-10 lg:pl-10 lg:pb-8 sm:w-2/5 lg:w-3/5"> 
                  
-                    <div className="text-3xl font-extrabold font-serif"> {slide?.city} Itinerary </div>
-                   <p className="font-sans text-dark-200 sm:hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, totam quae? Voluptatem delectus velit vitae ipsum incidunt, tenetur expedita voluptatibus consequuntur reiciendis repellendus nostrum eligendi et corrupti consequatur pariatur vel quia amet doloribus voluptate quam iste officiis similique veritatis. Officiis!</p>
-                 
+                    <div className="text-3xl sm:text-xl font-extrabold font-mono"> Delhi Itinerary </div>
+                   <p className="font-sans sm:hidden text-dark-200 ">velit vitae ipsum incidunt, tenetur expedita voluptatibus consequuntur reiciendis repellendus nostrum eligendi et corrupti consequatur pariatur vel quia amet doloribus voluptate quam iste officiis similique veritatis. Officiis!</p>
+                   <p className="font-sans text-xs lg:hidden text-dark-200 ">velit vitae ipsum incidunt </p>
  
-                     <div className=" flex gap-6 sm:flex-col  sm:gap-5">
-                     <button className="bg-transparent flex gap-2 hover:bg-black text-black font-semibold hover:text-white lg:py-2 px-4 border border-black-500 hover:border-transparent rounded">
+                     <div className=" flex sm:gap-2 lg:gap-6 pt-16 ">
+                     <button className="bg-transparent flex sm:p-2 sm:items-center lg:gap-2 sm:h-10 sm:w-20 sm:text-xs   text-green-900 font-semibold  lg:py-2 lg:px-4 border border-green-900 rounded">
    Rs.350
 </button>
-<button className="bg-green-800 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded">
+<button className="bg-green-900 sm:h-10 sm:p-2  sm:w-20 sm:text-xs text-white font-bold lg:py-2 lg:px-4 border border-green-700 rounded">
  More
 </button> </div>
 
              </div>
-          <Image src={slide.image} alt={`Slide ${slide.id}`} className="w-58 h-64  sm:w-44 sm:h-56 object-cover rounded-2xl" /> 
+             
+  <Image src={delhi} alt="Slide" className="lg:w-64 lg:h-44  sm:h-16 sm:w-24 absolute z-40 object-cover rounded-2xl  lg:bottom-0 lg:top-16 sm:left-[10rem] sm:top-24  lg:right-20 " />
+  <Image src={mumbai} alt="Slide" className="lg:w-56 lg:h-56 sm:h-20 sm:w-24 absolute z-30 object-cover rounded-2xl lg:bottom-0 lg:top-0 sm:left-[12rem]  sm:top-16  lg:right-0 " />
+
+            
             </main>
             </div>
-          ))}
+          
         </div>
   
-        <button onClick={prevSlide} className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 bg-gray-800 text-white rounded-lg">
-         <FaArrowLeft />
+        <button  className="absolute top-1/2 lg:left-8 sm:left-1 transform lg:h-16 lg:w-16 rounded-full flex justify-center items-center -translate-y-1/2 p-2 bg-gray-800 text-white ">
+         <FaArrowLeft className="lg:text-3xl sm:text-xs"/>
         </button>
-        <button onClick={nextSlide} className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2 bg-gray-800 text-white rounded-lg">
-    <FaArrowRight />
+        
+        <button  className="absolute top-1/2 lg:right-8 sm:right-1 lg:h-16 lg:w-16 transform -translate-y-1/2 p-2 flex justify-center items-center bg-gray-800 text-white rounded-full">
+    <FaArrowRight className="lg:text-3xl sm:text-xs" />
         </button>
       </div>
     );

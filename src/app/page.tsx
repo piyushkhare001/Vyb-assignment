@@ -24,7 +24,7 @@ const HeroSection = () => {
 
 <iframe 
         src={MobSrc}
-        className="absolute top-0 left-0 w-full h-full object-cover p-4 mt-9 lg:hidden"
+        className="absolute  top-0 left-0 w-full h-full object-cover p-4 mt-9 lg:hidden"
         frameBorder="0"
         allow="autoplay; fullscreen; picture-in-picture"
         allowFullScreen

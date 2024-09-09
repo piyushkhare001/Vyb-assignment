@@ -65,19 +65,19 @@ export default function Store(){
        <p className="font-bold">Link social meadia accounts</p>
        <div className="border gap-2 sm:w-64 w-96 items-center border-black rounded-md flex p-4  justify-around">
            <div><Image alt = "img" src ={insta} height={25} width={30} /></div>
-           <div className="border rounded-sm border-black p-3">Followers </div>
-           <div className="border rounded-sm border-black p-3"> Insta</div>
+           <div className="border rounded-lg border-black p-3">Followers </div>
+           <div className="border rounded-lg border-black p-3"> Insta</div>
        </div>
    
        <div className="border gap-2 sm:w-64 w-96 items-center border-black rounded-md p-4 flex justify-around">
-           <div><Image alt = "img" height={50} width={40} src ={insta} /></div>
-           <div className="border rounded-sm border-black p-3">Subscribe</div>
-           <div className="border rounded-sm border-black p-3"> youtube</div>
+           <div><Image alt = "img" height={25} width={30} src ={insta} /></div>
+           <div className="border rounded-lg border-black p-3">Followers </div>
+           <div className="border rounded-lg border-black p-3"> Insta</div>
        </div>
     
    
      </div>
-     <div className="flex flex-col gap-3">
+     <div className="flex flex-col pt-3 gap-3">
      <label className="Font-serif text-lg" >claim your score url</label>
      <input 
            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
